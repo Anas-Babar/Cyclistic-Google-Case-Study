@@ -1,4 +1,6 @@
+
 ---- Query to extract Day of the week and time
+
 SELECT
     CAST(started_at AS TIME) AS time,
     CASE
@@ -16,7 +18,12 @@ SELECT
         ELSE 'Saturday'
     END AS day_of_week
 FROM
-    `bike-share-2024.Bikeshare2023.Dec` --- Extract time of the day 
+    `bike-share-2024.Bikeshare2023.Dec` 
+    
+    
+    --- Extract time of the day 
+
+    
 SELECT
     Quarter,
     Month,
@@ -25,7 +32,7 @@ SELECT
     time_of_day,
     COUNT(num_of_trips) AS Total_Trips
 From
-(
+    (
         SELECT
             Quarter,
             Month,
@@ -56,7 +63,12 @@ GROUP BY
     Quarter,
     Month,
     member_casual,
-    rideable_type -- Merge two queries ( Extract WOW time of the day )
+    rideable_type 
+    
+    
+    -- Merge two queries ( Extract WOW time of the day )
+
+
 SELECT
     Quarter,
     Month,
@@ -67,7 +79,7 @@ SELECT
     Hour,
     COUNT(num_of_trips) AS Total_Trips
 From
-(
+    (
         SELECT
             Quarter,
             Month,
@@ -118,4 +130,57 @@ GROUP BY
     day_of_week,
     member_casual,
     rideable_type,
-    Hour
+    Hour 
+    
+    
+    --- Calculate duration of each ridetype by route
+
+
+SELECT
+    rideable_type,
+    CONCAT(start_station_name, " to ", end_station_name) AS Route,
+    COUNT(*) AS num_trips,
+    ROUND(
+        AVG(CAST(UNIX_SECONDS(ended_at) AS INT64) / 60),
+        1
+    ) - ROUND(
+        AVG(CAST(UNIX_SECONDS(started_at) AS INT64) / 60),
+        1
+    ) AS duration
+FROM
+    `bike-share-2024.Bikeshare2023.Bikeshare 2023 Q1`
+GROUP BY
+    start_station_name,
+    end_station_name,
+    rideable_type
+Order By
+    num_trips DESC 
+    
+    
+    
+    --- Calculate total trips - Avg duration - Group by Quarter , Month, Member, rideable_type
+
+
+SELECT
+    Quarter,
+    Month,
+    member_casual,
+    rideable_type,
+    Count(*) AS num_trips,
+    ROUND(
+        AVG(CAST(UNIX_SECONDS(ended_at) AS INT64) / 60),
+        2
+    ) - ROUND(
+        AVG(CAST(UNIX_SECONDS(started_at) AS INT64) / 60),
+        2
+    ) AS duration
+FROM
+    `bike-share-2024.Bikeshare2023.Year - 2023`
+GROUP BY
+    Quarter,
+    Month,
+    member_casual,
+    rideable_type
+ORDER BY
+    Quarter,
+    Month
