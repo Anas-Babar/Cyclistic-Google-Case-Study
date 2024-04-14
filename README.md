@@ -1,3 +1,8 @@
+
+![images](https://github.com/Anas-Babar/Cyclistic-Google-Case-Study/assets/125931322/835b286b-5705-43c2-8a0c-aa0eda4e73a3)
+
+
+
 # Google Data Analytics Capstone: Cyclistic Case Study
 Course: [Google Data Analytics Capstone: Complete a Case Study](https://www.coursera.org/learn/google-data-analytics-capstone)
 
