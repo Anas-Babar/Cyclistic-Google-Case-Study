@@ -20,10 +20,16 @@ Data Visualizations: [Tableau](https://public.tableau.com/views/Cyclistic-BikeSh
 
 Article : [Medium](https://medium.com/@anas_babar/cyclistic-google-data-analytics-capstone-1dde5acd0258)
 
-Deliverables
+## Deliverables
+
 1.A clear statement of the business task
+
 2.A description of all data sources used
+
 3.Documentation of any cleaning or manipulation of data
+
 4.A summary of analysis
+
 5.Supporting visualizations and key findings
+
 6.Top three recommendations based on analysis
