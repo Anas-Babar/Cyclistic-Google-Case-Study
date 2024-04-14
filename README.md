@@ -19,3 +19,11 @@ SQL Queries:
 Data Visualizations: [Tableau](https://public.tableau.com/views/Cyclistic-BikeShare-GoogleCaseStudy-Dashboard1/Cyclistic-GoogleCaseStudy?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link) 
 
 Article : [Medium](https://medium.com/@anas_babar/cyclistic-google-data-analytics-capstone-1dde5acd0258)
+
+Deliverables
+A clear statement of the business task
+A description of all data sources used
+Documentation of any cleaning or manipulation of data
+A summary of analysis
+Supporting visualizations and key findings
+Top three recommendations based on analysis
